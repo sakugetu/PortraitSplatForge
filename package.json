@@ -1,0 +1,33 @@
+{
+  "name": "portrait-splat-forge",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "server": "node server/index.js",
+    "start": "concurrently \"npm run server\" \"npm run dev\"",
+    "setup": "node scripts/setup-local.mjs",
+    "setup:all": "node scripts/setup-local.mjs --npm-install --download-rembg-models",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "verify:render": "node scripts/verify-render.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.2.1",
+    "express": "^5.1.0",
+    "lucide-react": "^0.468.0",
+    "multer": "^2.0.2",
+    "openai": "^6.9.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sharp": "^0.34.5",
+    "three": "^0.180.0",
+    "vite": "^7.1.9"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}
