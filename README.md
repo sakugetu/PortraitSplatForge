@@ -6,6 +6,8 @@ Japanese README: [README.ja.md](README.ja.md)
 
 Third-party backend and model license notes: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
 
+![Portrait Splat Forge app screenshot](docs/screenshots/app-home.png)
+
 ## Requirements
 
 - Node.js 20.19+ or 22.x. The checked development runtime is Node.js 22.

@@ -4,6 +4,8 @@ Portrait Splat Forge は、ポートレート画像や動画フレームから 3
 
 静止画では Apple SHARP などの単一画像・少数画像向けバックエンドを試せます。動画では Quest Link / Air Link と PC GPU での利用を想定し、動画からフレームを抽出して既存の静的 GS バックエンドへ渡すためのワークフローを提供します。
 
+![Portrait Splat Forge の画面](docs/screenshots/app-home.png)
+
 ## 必要環境
 
 - Node.js 20.19+ または 22.x。開発確認は Node.js 22 で行っています。
