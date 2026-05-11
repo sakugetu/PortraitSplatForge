@@ -6,6 +6,14 @@ Portrait Splat Forge は、ポートレート画像や動画フレームから 3
 
 ![Portrait Splat Forge の画面](docs/screenshots/app-home.png)
 
+## サンプル出力
+
+Apple SHARP バックエンドを使った Full image / Full scene 系プレビューの例です。
+
+| 背景込みポートレート | 立像・オブジェクト例 |
+|---|---|
+| ![背景込みポートレートのGaussian Splatサンプル](docs/screenshots/sample-full-scene-portrait.jpg) | ![立像のGaussian Splatサンプル](docs/screenshots/sample-statue-sharp.jpg) |
+
 ## 必要環境
 
 - Node.js 20.19+ または 22.x。開発確認は Node.js 22 で行っています。

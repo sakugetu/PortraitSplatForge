@@ -8,6 +8,15 @@ Third-party backend and model license notes: [THIRD_PARTY_NOTICES.md](THIRD_PART
 
 ![Portrait Splat Forge app screenshot](docs/screenshots/app-home.png)
 
+## Sample Outputs
+
+These screenshots show the Apple SHARP-backed preview mode with full-scene
+inputs.
+
+| Full-scene portrait | Statue / object example |
+|---|---|
+| ![Full-scene portrait Gaussian Splat sample](docs/screenshots/sample-full-scene-portrait.jpg) | ![Statue Gaussian Splat sample](docs/screenshots/sample-statue-sharp.jpg) |
+
 ## Requirements
 
 - Node.js 20.19+ or 22.x. The checked development runtime is Node.js 22.
