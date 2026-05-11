@@ -6,10 +6,20 @@ Japanese README: [README.ja.md](README.ja.md)
 
 Third-party backend and model license notes: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
 
-## Run
+## Requirements
+
+- Node.js 20.19+ or 22.x. The checked development runtime is Node.js 22.
+- npm 10+
+- Python 3.9+ for the bundled `rembg` mask helper
+- Optional for video input: `ffmpeg` and `ffprobe` on `PATH`
+- Optional for production 3DGS backends: CUDA, conda, model checkpoints, and
+  backend-specific setup
+
+## Quick Start
 
 ```bash
 npm install
+npm run setup
 npm run start
 ```
 
@@ -19,22 +29,30 @@ Open:
 http://127.0.0.1:5173/
 ```
 
-## Setup
+The app starts in local/mock mode. No OpenAI key or external 3DGS model is
+required for the basic UI and lightweight preview.
 
-JavaScript dependencies are locked by `package-lock.json`:
+## Environment
 
-```bash
-npm install
-```
-
-The built-in subject mask path uses a small Python environment for `rembg`:
+Create `.env` only when you need API keys or optional backend configuration:
 
 ```bash
-npm run setup
+cp .env.example .env
 ```
 
-Python 3.9+ works for the bundled `rembg` environment. Python 3.10 or 3.11 is
-recommended for newer external research backends.
+On Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Leave optional backend commands blank until each backend is installed locally.
+Copying `.env.example` should not download or enable Apple SHARP, InstantSplat,
+VGGT, gsplat, or GaussianObject by itself.
+
+## Setup Details
+
+JavaScript dependencies are locked by `package-lock.json`.
 
 To do a first-time local setup and pre-download the two rembg segmentation
 models used by the app:
@@ -46,6 +64,9 @@ npm run setup:all
 `setup:all` installs npm packages, creates `.venv-rembg`, installs
 `requirements-rembg.txt`, and warms up `u2net_human_seg` plus
 `isnet-general-use`.
+
+Python 3.9+ works for the bundled `rembg` environment. Python 3.10 or 3.11 is
+recommended for newer external research backends.
 
 External research backends such as Apple SHARP, InstantSplat, VGGT, gsplat, and
 GaussianObject are intentionally not downloaded automatically. Their source

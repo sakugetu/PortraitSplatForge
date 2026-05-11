@@ -4,10 +4,19 @@ Portrait Splat Forge は、ポートレート画像や動画フレームから 3
 
 静止画では Apple SHARP などの単一画像・少数画像向けバックエンドを試せます。動画では Quest Link / Air Link と PC GPU での利用を想定し、動画からフレームを抽出して既存の静的 GS バックエンドへ渡すためのワークフローを提供します。
 
-## 起動方法
+## 必要環境
+
+- Node.js 20.19+ または 22.x。開発確認は Node.js 22 で行っています。
+- npm 10+
+- 内蔵マスク補助用に Python 3.9+
+- 動画入力を使う場合は `ffmpeg` / `ffprobe`
+- 本格的な外部3DGSバックエンドを使う場合は CUDA、conda、モデルチェックポイント、各バックエンド固有のセットアップ
+
+## クイックスタート
 
 ```bash
 npm install
+npm run setup
 npm run start
 ```
 
@@ -19,19 +28,27 @@ http://127.0.0.1:5173/
 
 API サーバーは標準で `http://127.0.0.1:8787` で起動します。
 
-## セットアップ
+標準ではローカル / モックモードで起動します。基本UIと軽量プレビューだけなら OpenAI API key や外部3DGSモデルは不要です。
+
+## 環境設定
+
+API key や外部バックエンドを設定する場合だけ `.env` を作成します。
+
+```bash
+cp .env.example .env
+```
+
+Windows PowerShell の場合:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+`.env.example` をコピーしただけで Apple SHARP、InstantSplat、VGGT、gsplat、GaussianObject が自動で有効になることはありません。外部バックエンドは、ローカルに導入してから明示的にコマンドを設定してください。
+
+## セットアップ詳細
 
 JavaScript 依存関係は `package-lock.json` で固定しています。
-
-```bash
-npm install
-```
-
-内蔵のマスク処理では `rembg` 用の小さな Python 環境を使います。
-
-```bash
-npm run setup
-```
 
 同梱の `rembg` 環境は Python 3.9+ で動作するようにしています。外部研究バックエンドは Python 3.10 / 3.11 が必要になることがあります。
 
